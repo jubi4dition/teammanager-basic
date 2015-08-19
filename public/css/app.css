@@ -14,7 +14,24 @@ body {
   border-color: #e4e5e7;
 }
 
-#logo {
+.navbar-default .navbar-nav>li>a {
+    color: #777;
+    border-left: 1px solid #E4E5E7;
+}
+
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #F7F8FA;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #333;
+    background-color: #ECEFF1;
+}
+
+.navbar-default #logo {
   background-color: #F7F9FA;
   color: #34495E;
 }

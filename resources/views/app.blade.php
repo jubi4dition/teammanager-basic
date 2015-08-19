@@ -32,6 +32,7 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
+          <li><p class="navbar-text"><span class="glyphicon glyphicon-user"></span> {!! \Auth::user()->fullname !!}</p></li>
           <li><a href="{{ url('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
       </div>
