@@ -27,8 +27,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="{{ url('/') }}">Home</a></li>
-          <li><a href="{{ route('persons') }}">Persons</a></li>
-          <li><a href="{{ route('teams') }}">Teams</a></li>
+          <li><a href="{{ route('persons') }}">@lang('app.persons')</a></li>
+          <li><a href="{{ route('teams') }}">@lang('app.teams')</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

@@ -23,6 +23,7 @@ return [
 	"description" => "Description",
 	"dateOfBirth" => "Date of birth",
 	"updateSuccessful" => "Update was successful",
-	"persons" => "Persons"
+	"persons" => "Persons",
+    "teams" => "Teams"
 
 ];
