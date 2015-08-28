@@ -22,6 +22,7 @@ return [
 	"name" => "Name",
 	"description" => "Description",
 	"dateOfBirth" => "Date of birth",
-	"updateSuccessful" => "Update was successful"
+	"updateSuccessful" => "Update was successful",
+	"persons" => "Persons"
 
 ];
