@@ -38,7 +38,7 @@ class UserTableSeeder extends Seeder {
         $user = App\User::create(array(
             'username' => 'username',
             'password' => Hash::make('123456'),
-            'fullname' => 'Fullname'
+            'fullname' => 'Firstname Lastname'
         ));
     }
 
