@@ -90,11 +90,3 @@
 </div>
 
 @endsection
-
-@section('javascript')
-<script>
-$( document ).ready(function() {
-    $('.alert').slideDown();
-});
-</script>
-@endsection

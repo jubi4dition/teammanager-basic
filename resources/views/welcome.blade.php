@@ -44,11 +44,13 @@
   </div>
 </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-$( document ).ready(function() {
-    $('.alert').slideDown();
-});
+  $( document ).ready(function() {
+    $('.panel').fadeIn(1000, function() {
+      $('.alert').slideDown();
+    });
+  });
 </script>
 </body>
 </html>

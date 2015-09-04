@@ -45,6 +45,7 @@ label {
 }
 
 .panel {
+  display: none;
   padding: 20px;
 }
 
