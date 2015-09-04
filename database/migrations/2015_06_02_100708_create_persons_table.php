@@ -15,8 +15,8 @@ class CreatePersonsTable extends Migration {
         Schema::create('persons', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('firstname', 64);
-            $table->string('lastname', 64);
+            $table->string('firstname', 32);
+            $table->string('lastname', 32);
             $table->enum('gender', ['unknown', 'male', 'female']);
             $table->date('birthdate')->default('0000-00-00');
             $table->timestamps();

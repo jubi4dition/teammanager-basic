@@ -21,11 +21,11 @@
         {!! Form::open( array('route' => array('person.new')) ) !!}
           <div class="form-group">
             {!! Form::label('firstname', trans('app.firstname')) !!}
-            {!! Form::text('firstname', Input::old('firstname') , array('class' => 'form-control', 'placeholder' => trans('app.firstname'))) !!}
+            {!! Form::text('firstname', Input::old('firstname') , array('class' => 'form-control', 'placeholder' => trans('app.firstname'), 'maxlength' => '32')) !!}
           </div>
           <div class="form-group">
             {!! Form::label('lastname', trans('app.lastname')) !!}
-            {!! Form::text('lastname', Input::old('lastname') , array('class' => 'form-control', 'placeholder' => trans('app.lastname'))) !!}
+            {!! Form::text('lastname', Input::old('lastname') , array('class' => 'form-control', 'placeholder' => trans('app.lastname'), 'maxlength' => '32')) !!}
           </div>
           <div class="form-group">
             {!! Form::label('gender', trans('app.gender')) !!}

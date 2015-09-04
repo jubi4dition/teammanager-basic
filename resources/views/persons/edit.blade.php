@@ -29,7 +29,7 @@
           {!! Form::open( array('route' => array('person.edit-field', $person->id, 'firstname')) ) !!}
           {!! Form::label('firstname', trans('app.firstname')) !!}
           <div class="input-group">
-            {!! Form::text('firstname', $person->firstname , array('class' => 'form-control', 'placeholder' => trans('app.firstname'))) !!}
+            {!! Form::text('firstname', $person->firstname , array('class' => 'form-control', 'placeholder' => trans('app.firstname'), 'maxlength' => '32')) !!}
             <span class="input-group-btn">
               <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-refresh"></span></button>
             </span>
@@ -42,7 +42,7 @@
           {!! Form::open( array('route' => array('person.edit-field', $person->id, 'lastname')) ) !!}
           {!! Form::label('lastname', trans('app.lastname')) !!}
           <div class="input-group">
-            {!! Form::text('lastname', $person->lastname , array('class' => 'form-control', 'placeholder' => trans('app.lastname'))) !!}
+            {!! Form::text('lastname', $person->lastname , array('class' => 'form-control', 'placeholder' => trans('app.lastname'), 'maxlength' => '32')) !!}
             <span class="input-group-btn">
               <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-refresh"></span></button>
             </span>
