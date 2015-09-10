@@ -14,7 +14,7 @@
             <th>@lang('app.firstname')</th>
             <th>@lang('app.lastname')</th>
             <th>@lang('app.gender')</th>
-            <th>@lang('app.dateOfBirth')</th>
+            <th>@lang('app.dateOfBirth') (@lang('app.age'))</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -25,7 +25,7 @@
             <td>{{ $person->firstname }}</td> 
             <td>{{ $person->lastname }}</td>
             <td>{{ $person->gender() }}</td>
-            <td>{{ $person->birthdate }}</td>
+            <td>{{ $person->birthdate_formatted() }} {{ $person->age() }}</td>
             <td style="text-align: right;"><a class="btn btn-default" href="{!! route('person.edit',[$person->id]) !!}" role="button"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></td>
         </tr>
         @endforeach

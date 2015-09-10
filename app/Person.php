@@ -74,11 +74,20 @@ class Person extends Model {
         return Form::select('person', $persons, '', array('class' => 'form-control'));
     }
     
-    public function birthdate_formatted() {
-        
+    public function birthdate_formatted() 
+    {
         if ($this->birthdate === '0000-00-00') return "-";
         
         return date("m.d.Y", strtotime($this->birthdate));
+    }
+    
+    public function age() 
+    {
+        if ($this->birthdate !== '0000-00-00') {
+            $from = new \DateTime($this->birthdate);
+            $to   = new \DateTime('today');
+            return '('.$from->diff($to)->y.')';
+        }
     }
 
 }
