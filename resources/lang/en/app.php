@@ -23,6 +23,7 @@ return [
     "description" => "Description",
     "dateOfBirth" => "Date of birth",
     "age" => "age",
+    "email" => "E-Mail",
     "updateSuccessful" => "Update was successful",
     "persons" => "Persons",
     "teams" => "Teams"

@@ -14,6 +14,7 @@ class Person extends Model {
         'lastname' => 'required',
         'gender' => 'required|in:male,female,unknown',
         'birthdate' => 'date',
+        'email' => 'email'
     );
     
     public function teams()

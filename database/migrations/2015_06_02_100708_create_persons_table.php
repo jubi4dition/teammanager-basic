@@ -19,6 +19,7 @@ class CreatePersonsTable extends Migration {
             $table->string('lastname', 32);
             $table->enum('gender', ['unknown', 'male', 'female']);
             $table->date('birthdate')->default('0000-00-00');
+            $table->string('email', 64);
             $table->timestamps();
         });
     }

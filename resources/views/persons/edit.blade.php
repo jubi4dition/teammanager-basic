@@ -75,6 +75,18 @@
           {!! Form::close() !!}
         </div>
         
+        <div class="form-group">
+          {!! Form::open( array('route' => array('person.edit-field', $person->id, 'email')) ) !!}
+          {!! Form::label('email', trans('app.email')) !!}
+          <div class="input-group">
+            {!! Form::text('email', $person->email , array('class' => 'form-control', 'placeholder' => trans('app.email'), 'maxlength' => '64')) !!}
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-refresh"></span></button>
+            </span>
+          </div>
+          {!! Form::close() !!}
+        </div>
+        
       </div>
     </div>
     
