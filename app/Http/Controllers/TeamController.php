@@ -35,7 +35,7 @@ class TeamController extends Controller {
 
         if ($validator->fails()) {
             Input::flash();
-            return view('teams.new')->withErrors($validator->messages()->all());
+            return redirect()->route('team.new')->withErrors($validator->messages()->all());
         }
 
         $team = new Team;

@@ -35,7 +35,7 @@ class PersonController extends Controller {
 
         if ($validator->fails()) {
             Input::flash();
-            return view('persons.new')->withErrors($validator->messages()->all());
+            return redirect()->route('person.new')->withErrors($validator->messages()->all());
         }
 
         $person = new Person;
