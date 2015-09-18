@@ -52,7 +52,7 @@ class TeamController extends Controller {
     {
         $team = Team::find($id);
 
-        if (empty($team)) return redirect('teams');
+        if ($team === null) return redirect('teams');
 
         return view('teams.edit')->with('team', $team);
     }
@@ -62,6 +62,8 @@ class TeamController extends Controller {
         if (!array_key_exists($field, Team::$rulesAll)) \App::abort(403, 'Unauthorized action.');
 
         $team = Team::find($id);
+        
+        if ($team === null) return redirect('teams');
 
         $validator = Team::validate(Input::all(), $field);
 
@@ -80,7 +82,7 @@ class TeamController extends Controller {
     {
         $team = Team::find($id);
         
-        if (empty($team)) return redirect('teams');
+        if ($team === null) return redirect('teams');
 
         $team->delete();
 
@@ -91,7 +93,7 @@ class TeamController extends Controller {
     {
         $team = Team::find($id);
         
-        if (empty($team)) return redirect('teams');
+        if ($team === null) return redirect('teams');
 
         $team->persons()->detach($person_id);
 
@@ -102,7 +104,7 @@ class TeamController extends Controller {
     {
         $team = Team::find($id);
         
-        if (empty($team)) return redirect('teams');
+        if ($team === null) return redirect('teams');
         
         $person_id = (int) Input::get('person');
         

@@ -54,7 +54,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
 
-        if (empty($person)) return redirect('persons');
+        if ($person === null) return redirect('persons');
 
         return view('persons.edit')->with('person', $person);
     }
@@ -64,6 +64,8 @@ class PersonController extends Controller {
         if (!array_key_exists($field, Person::$rulesAll)) \App::abort(403, 'Unauthorized action.');
 
         $person = Person::find($id);
+        
+        if ($person === null) return redirect('persons');
 
         $validator = Person::validate(Input::all(), $field);
 
@@ -82,7 +84,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if (empty($person)) return redirect('persons');
+        if ($person === null) return redirect('persons');
 
         $person->delete();
 
@@ -93,7 +95,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if (empty($person)) return redirect('persons');
+        if ($person === null) return redirect('persons');
 
         $person->teams()->detach($team_id);
 
@@ -104,7 +106,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if (empty($person)) return redirect('persons');
+        if ($person === null) return redirect('persons');
         
         $team_id = (int) Input::get('team');
         
