@@ -22,7 +22,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <div class="panel panel-default" style="padding: 20px; margin-top: 25px;">
+      <div class="panel panel-default" style="padding: 20px 30px 30px; margin-top: 25px; background: #34495E; border-radius: 10px;">
         @if (isset($error))
         <div class="alert alert-danger" style="display:none;">
           @lang('app.loginFailed')
@@ -30,11 +30,11 @@
         @endif
         {!! Form::open(array('url' => 'login')) !!}
           <div class="form-group">
-            {!! Form::label('username', trans('app.username')) !!}
+            {!! Form::label('username', trans('app.username'), array('style' => 'color: #FFF;')) !!}
             {!! Form::text('username', Input::get('username') , array('class' => 'form-control', 'placeholder' => trans('app.username'))); !!}
           </div>
           <div class="form-group" style="margin-bottom: 25px;">
-            {!! Form::label('password', trans('app.password')) !!}
+            {!! Form::label('password', trans('app.password'), array('style' => 'color: #FFF;')) !!}
             {!! Form::password('password', array('class' => 'form-control', 'placeholder' => trans('app.password'))) !!}
           </div>
           <button type="submit" class="btn btn-default btn-block">@lang('app.login')</button>
