@@ -47,7 +47,7 @@ class PersonController extends Controller {
 
         $person->save();
 
-        return redirect()->route('person.new');
+        return redirect()->route('person.new')->with('success', trans('app.newPersonSuccess'));
     }
     
     public function getEdit($id)

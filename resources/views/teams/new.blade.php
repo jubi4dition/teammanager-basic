@@ -34,6 +34,11 @@
     <div class="col-lg-5">
       <div class="panel panel-default">
         <h2>Teams</h2>
+          @if( Session::has('success'))
+          <div class="alert alert-success" style="display: none;">
+              {{ Session::get('success') }}
+          </div>
+          @endif
         <table class="table">
         <thead>
           <tr>

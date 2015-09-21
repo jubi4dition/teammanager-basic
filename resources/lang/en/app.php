@@ -27,6 +27,8 @@ return [
     "updateSuccessful" => "Update was successful.",
     "personNotExists" => "The person with the ID :id does not exists.",
     "teamNotExists" => "The team with the ID :id does not exists.",
+    "newPersonSuccess" => "The new person was created.",
+    "newTeamSuccess" => "The new team was created.",
     "persons" => "Persons",
     "teams" => "Teams"
 

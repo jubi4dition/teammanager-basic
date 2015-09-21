@@ -45,7 +45,7 @@ class TeamController extends Controller {
 
         $team->save();
 
-        return redirect()->route('team.new');
+        return redirect()->route('team.new')->with('success', trans('app.newTeamSuccess'));
     }
     
     public function getEdit($id)
