@@ -7,6 +7,11 @@
       <div class="panel panel-default">
         <a href="{!! route('team.new') !!}" class="btn btn-default" style="float: right;"><span class="glyphicon glyphicon-plus"></span> @lang('app.newTeam')</a>
         <h2>Teams</h2>
+          @if( Session::has('error'))
+          <div class="alert alert-danger" style="display: none;">
+              {{ Session::get('error') }}
+          </div>
+          @endif
         <table class="table">
         <thead>
           <tr>

@@ -24,7 +24,9 @@ return [
     "dateOfBirth" => "Date of birth",
     "age" => "age",
     "email" => "E-Mail",
-    "updateSuccessful" => "Update was successful",
+    "updateSuccessful" => "Update was successful.",
+    "personNotExists" => "The person with the ID :id does not exists.",
+    "teamNotExists" => "The team with the ID :id does not exists.",
     "persons" => "Persons",
     "teams" => "Teams"
 

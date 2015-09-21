@@ -7,6 +7,11 @@
       <div class="panel panel-default">
         <a href="{!! route('person.new') !!}" class="btn btn-default" style="float: right;"><span class="glyphicon glyphicon-plus"></span> @lang('app.newPerson')</a>
         <h2>Persons</h2>
+          @if( Session::has('error'))
+          <div class="alert alert-danger" style="display: none;">
+              {{ Session::get('error') }}
+          </div>
+          @endif
         <table class="table">
         <thead>
           <tr>

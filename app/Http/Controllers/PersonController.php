@@ -54,7 +54,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
 
-        if ($person === null) return redirect('persons');
+        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
 
         return view('persons.edit')->with('person', $person);
     }
@@ -65,7 +65,7 @@ class PersonController extends Controller {
 
         $person = Person::find($id);
         
-        if ($person === null) return redirect('persons');
+        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
 
         $validator = Person::validate(Input::all(), $field);
 
@@ -84,7 +84,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if ($person === null) return redirect('persons');
+        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
 
         $person->delete();
 
@@ -95,7 +95,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if ($person === null) return redirect('persons');
+        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
 
         $person->teams()->detach($team_id);
 
@@ -106,7 +106,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if ($person === null) return redirect('persons');
+        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
         
         $team_id = (int) Input::get('team');
         
@@ -115,6 +115,11 @@ class PersonController extends Controller {
         }
 
         return redirect()->route('person.edit', $person->id);
+    }
+    
+    private function validPersonOrRedirect($person, $id) {
+        if ($person === null) 
+            return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
     }
 
 }

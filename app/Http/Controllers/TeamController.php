@@ -52,7 +52,7 @@ class TeamController extends Controller {
     {
         $team = Team::find($id);
 
-        if ($team === null) return redirect('teams');
+        if ($team === null) return redirect('teams')->withError(trans('app.teamNotExists', ['id' => $id]));
 
         return view('teams.edit')->with('team', $team);
     }
@@ -63,7 +63,7 @@ class TeamController extends Controller {
 
         $team = Team::find($id);
         
-        if ($team === null) return redirect('teams');
+        if ($team === null) return redirect('teams')->withError(trans('app.teamNotExists', ['id' => $id]));
 
         $validator = Team::validate(Input::all(), $field);
 
@@ -82,7 +82,7 @@ class TeamController extends Controller {
     {
         $team = Team::find($id);
         
-        if ($team === null) return redirect('teams');
+        if ($team === null) return redirect('teams')->withError(trans('app.teamNotExists', ['id' => $id]));
 
         $team->delete();
 
@@ -93,7 +93,7 @@ class TeamController extends Controller {
     {
         $team = Team::find($id);
         
-        if ($team === null) return redirect('teams');
+        if ($team === null) return redirect('teams')->withError(trans('app.teamNotExists', ['id' => $id]));
 
         $team->persons()->detach($person_id);
 
@@ -104,7 +104,7 @@ class TeamController extends Controller {
     {
         $team = Team::find($id);
         
-        if ($team === null) return redirect('teams');
+        if ($team === null) return redirect('teams')->withError(trans('app.teamNotExists', ['id' => $id]));
         
         $person_id = (int) Input::get('person');
         
