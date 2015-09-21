@@ -35,6 +35,10 @@
             {!! Form::label('birthdate', trans('app.dateOfBirth')) !!}
              {!! Form::input('date', 'birthdate', Input::old('birthdate'), ['class' => 'form-control']) !!}
           </div>
+          <div class="form-group">
+            {!! Form::label('email', trans('app.email')) !!}
+            {!! Form::text('email', Input::old('email') , array('class' => 'form-control', 'placeholder' => trans('app.email'), 'maxlength' => '32')) !!}
+          </div>
           <button type="submit" class="btn btn-default btn-block">@lang('app.submit')</button>
         {!! Form::close() !!}
         
