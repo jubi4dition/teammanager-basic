@@ -29,8 +29,10 @@ return [
     "updateSuccessful" => "Update was successful.",
     "personNotExists" => "The person with the ID :id does not exists.",
     "teamNotExists" => "The team with the ID :id does not exists.",
-    "newPersonSuccess" => "The new person was created.",
-    "newTeamSuccess" => "The new team was created.",
+    "newPersonSuccess" => "The new person has been created.",
+    "newTeamSuccess" => "The new team has been created.",
+    "removePersonSuccess" => "The person has been removed.",
+    "removeTeamSuccess" => "The team has been removed.",
     "persons" => "Persons",
     "teams" => "Teams",
     "close" => "Close"

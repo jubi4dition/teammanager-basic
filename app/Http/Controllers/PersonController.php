@@ -88,7 +88,7 @@ class PersonController extends Controller {
 
         $person->delete();
 
-        return redirect('persons');
+        return redirect('persons')->with('success', trans('app.removePersonSuccess'));
     }
     
     public function removeTeam($id, $team_id)

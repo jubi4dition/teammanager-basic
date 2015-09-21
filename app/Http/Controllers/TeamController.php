@@ -86,7 +86,7 @@ class TeamController extends Controller {
 
         $team->delete();
 
-        return redirect('teams');
+        return redirect('teams')->with('success', trans('app.removeTeamSuccess'));
     }
     
     public function removePerson($id, $person_id)
