@@ -53,3 +53,7 @@ h2 {
   margin-top: 0;
   color: #34495E;
 }
+
+textarea {
+  resize: vertical;
+}
