@@ -5,6 +5,10 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+.navbar-header {
+  background-color: #F7F9FA;
+}
+
 .navbar {
   margin-bottom: 40px;
 }
@@ -34,6 +38,10 @@ body {
 .navbar-default #logo {
   background-color: #F7F9FA;
   color: #34495E;
+}
+
+.navbar-text {
+  padding-left: 15px;
 }
 
 .table>thead>tr>th {
