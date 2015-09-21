@@ -15,9 +15,11 @@ return [
     "errormessages" => "error messages",
     "newPerson" => "New person",
     "removePerson" => "Remove person",
+    "removePersonQuestion" => "Do you really want to remove the person :person?",
     "addPerson" => "Add a person",
     "newTeam" => "New team",
     "removeTeam" => "Remove team",
+    "removeTeamQuestion" => "Do you really want to remove the team :team?",
     "addTeam" => "Add a team",
     "name" => "Name",
     "description" => "Description",
@@ -30,6 +32,7 @@ return [
     "newPersonSuccess" => "The new person was created.",
     "newTeamSuccess" => "The new team was created.",
     "persons" => "Persons",
-    "teams" => "Teams"
-
+    "teams" => "Teams",
+    "close" => "Close"
+    
 ];

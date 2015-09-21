@@ -5,7 +5,30 @@
   <div class="row buffer-top">
     <div class="col-lg-5 col-lg-offset-1">
       <div class="panel panel-default">
-        <a href="{!! route('person.remove', $person->id) !!}" class="btn btn-default" style="float: right;"><span class="glyphicon glyphicon-remove"></span> @lang('app.removePerson')</a>
+        
+        <button type="button" class="btn btn-default" style="float: right;" data-toggle="modal" data-target="#removeModal"><span class="glyphicon glyphicon-remove"></span> @lang('app.removePerson')</button>
+        
+        <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">@lang('app.removePerson')</h4>
+              </div>
+              <div class="modal-body">
+                @lang('app.removePersonQuestion', ['person' => $person->firstname.' '.$person->lastname])
+              </div>
+              {!! Form::open( ['route' => ['person.remove', $person->id]] ) !!}
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@lang('app.close')</button>
+                <button type="submit" class="btn btn-primary">@lang('app.removePerson')</button>
+              </div>
+              {!! Form::close() !!}
+            </div>
+          </div>
+        </div>
+        
+        
         <h2 style="margin-top: 0;">Person</h2>
         @if($errors->has())
         <div class="alert alert-danger" style="display: none;">
