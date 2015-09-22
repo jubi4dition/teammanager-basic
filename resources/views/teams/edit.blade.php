@@ -77,19 +77,21 @@
         <table class="table">
           <thead>
             <tr>
+              <th style="width: 50px;">ID</th>
               <th>@lang('app.name')</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
           @foreach ($team->persons as $person)
-          <tr>
-            <td>{{ $person->firstname }} {{ $person->lastname }}</td>
-            <td style="text-align: right;">
-              <a class="btn btn-default" href="{!! route('team.removePerson',[$team->id, $person->id]) !!}" role="button"><span class="glyphicon glyphicon-remove"></span></a>
-              <a class="btn btn-default" href="{!! route('person.edit',[$person->id]) !!}" role="button"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
-            </td>
-          </tr>
+            <tr>
+              <td>{{ $person->id }}</td>
+              <td>{{ $person->firstname }} {{ $person->lastname }}</td>
+              <td style="text-align: right;">
+                <a class="btn btn-default" href="{!! route('team.removePerson',[$team->id, $person->id]) !!}" role="button"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default" href="{!! route('person.edit',[$person->id]) !!}" role="button"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+              </td>
+            </tr>
           @endforeach
           </tbody>
       </table>

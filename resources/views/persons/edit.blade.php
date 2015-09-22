@@ -120,19 +120,21 @@
         <table class="table">
           <thead>
             <tr>
+              <th style="width: 50px;">ID</th>
               <th>@lang('app.name')</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
           @foreach ($person->teams as $team)
-          <tr>
-              <td>{{ $team->name }}</td> 
+            <tr>
+              <td>{{ $team->id }}</td> 
+              <td>{{ $team->name }}</td>
               <td style="text-align: right;">
                 <a class="btn btn-default" href="{!! route('person.removeTeam',[$person->id, $team->id]) !!}" role="button"><span class="glyphicon glyphicon-remove"></span></a>
                 <a class="btn btn-default" href="{!! route('team.edit',[$team->id]) !!}" role="button"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
               </td>
-          </tr>
+            </tr>
           @endforeach
           </tbody>
         </table>
