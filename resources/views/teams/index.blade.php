@@ -25,7 +25,7 @@
           <tr>
             <th style="width: 50px;">ID</th>
             <th>@lang('app.name')</th>
-            <th>@lang('app.description')</th>
+            <th class="hidden-xs">@lang('app.description')</th>
             <th>@lang('app.persons')</th>
             <th>&nbsp;</th>
           </tr>
@@ -35,7 +35,7 @@
         <tr>
           <td>{{ $team->id }}</td> 
             <td>{{ $team->name }}</td> 
-            <td>{{ $team->description }}</td>
+            <td class="hidden-xs">{{ $team->description }}</td>
             <td>{{ $team->persons->count() }}</td>
             <td style="text-align: right;"><a class="btn btn-default" href="{!! route('team.edit',[$team->id]) !!}" role="button"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></td>
         </tr>
