@@ -72,6 +72,7 @@
     
     <div class="col-lg-5">
       <div class="panel panel-default">
+        
         <h2 style="margin-top: 0;">Assigned persons</h2>
         @if(!$team->persons->isEmpty())
         <table class="table">
@@ -98,16 +99,17 @@
       @endif
       
       <div class="form-group" style="margin-top: 10px;">
-          {!! Form::open( array('route' => array('team.addPerson', $team->id)) ) !!}
-          {!! Form::label('person', trans('app.addPerson')) !!}
-          <div class="input-group">
-            {!! App\Person::createSelectbox($team->id) !!}
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
-            </span>
-          </div>
-          {!! Form::close() !!}
+        {!! Form::open( array('route' => array('team.addPerson', $team->id)) ) !!}
+        {!! Form::label('person', trans('app.addPerson')) !!}
+        <div class="input-group">
+          {!! App\Person::createSelectbox($team->id) !!}
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+          </span>
         </div>
+        {!! Form::close() !!}
+      </div>
+      
       </div>
     </div>
     

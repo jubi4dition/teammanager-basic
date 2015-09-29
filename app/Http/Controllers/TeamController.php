@@ -114,5 +114,16 @@ class TeamController extends Controller {
 
         return redirect()->route('team.edit', $team->id);
     }
+    
+    public function teamsandpersons()
+    {
+        $combination1 = \DB::table('teams')->join('persons_teams', 'teams.id', '=', 'persons_teams.team_id')
+                           ->join('persons', 'persons_teams.person_id', '=', 'persons.id')->orderBy('teams.name', 'asc')->orderBy('persons.firstname', 'asc')->get();
+                          
+        $combination2 = \DB::table('persons')->join('persons_teams', 'persons.id', '=', 'persons_teams.person_id')
+                   ->join('teams', 'persons_teams.team_id', '=', 'teams.id')->orderBy('persons.firstname', 'asc')->orderBy('teams.name', 'asc')->get();
+        
+        return view('teams.withPersons')->with(compact(['combination1', 'combination2']));
+    }
 
 }

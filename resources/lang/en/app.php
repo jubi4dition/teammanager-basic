@@ -35,6 +35,9 @@ return [
     "removeTeamSuccess" => "The team has been removed.",
     "persons" => "Persons",
     "teams" => "Teams",
+    "person" => "Person",
+    "team" => "Team",
+    "teamsAndPersons" => "Teams and Persons",
     "close" => "Close"
     
 ];

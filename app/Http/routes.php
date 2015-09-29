@@ -39,5 +39,6 @@ Route::any('team/{id}/edit/{field}', array('uses' => 'TeamController@postEditFie
 Route::any('team/{id}/remove', array('uses' => 'TeamController@remove', 'as' => 'team.remove'));
 Route::any('team/{id}/removeperson/{person_id}', array('uses' => 'TeamController@removePerson', 'as' => 'team.removePerson'));
 Route::any('team/{id}/addperson', array('uses' => 'TeamController@addPerson', 'as' => 'team.addPerson'));
+Route::get('teams-and-persons', 'TeamController@teamsandpersons');
 
 Route::get('home', 'HomeController@index');
