@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Team Management</title>
   
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-  
-  <!-- Fonts -->
-  <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,300,700,900">
   
 </head>
 <body style="padding-top: 60px;">
