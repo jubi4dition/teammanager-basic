@@ -2,7 +2,7 @@
 body {
   background: #EDF0F5;
   color: #333;
-  font-family: Roboto, sans-serif;
+  font-family: Lato, sans-serif;
 }
 
 .navbar-header {
@@ -52,11 +52,6 @@ label {
   color: #009688;
 }
 
-.panel {
-  display: none;
-  padding: 20px;
-}
-
 h2 {
   margin-top: 0;
   color: #34495E;
@@ -64,4 +59,18 @@ h2 {
 
 textarea {
   resize: vertical;
+}
+
+.panel {
+  display: none;
+}
+
+.panel-default>.panel-heading {
+  background-color: #34495E;
+  color: #fff;
+}
+
+.panel-heading h2 {
+  color: #fff;
+  margin: 0;
 }

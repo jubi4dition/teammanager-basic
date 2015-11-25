@@ -8,7 +8,7 @@
   
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/app.css">
-  <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Roboto:400,300'>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,300,700,900">
 
 </head>
 <body>
@@ -26,10 +26,10 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="{{ url('/') }}">Home</a></li>
-          <li><a href="{{ url('persons') }}">@lang('app.persons')</a></li>
-          <li><a href="{{ url('teams') }}">@lang('app.teams')</a></li>
-          <li><a href="{{ url('teams-and-persons') }}">@lang('app.teamsAndPersons')</a></li>
+          <li class="{{ Request::is('home') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+          <li class="{{ Request::is('person*') ? 'active' : '' }}" id="nav-person"><a href="{{ url('persons') }}">@lang('app.persons')</a></li>
+          <li class="{{ Request::is('team/*') || Request::is('teams') ? 'active' : '' }}"><a href="{{ url('teams') }}">@lang('app.teams')</a></li>
+          <li class="{{ Request::is('teams-and-persons') ? 'active' : '' }}"><a href="{{ url('teams-and-persons') }}">@lang('app.teamsAndPersons')</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
