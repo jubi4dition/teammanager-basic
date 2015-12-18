@@ -77,9 +77,9 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h2 style="margin-top: 0;">Assigned persons</h2>
-          @if(!$team->persons->isEmpty())
         </div>
         <div class="panel-body">
+          @if(!$team->persons->isEmpty())
           <table class="table">
             <thead>
               <tr>
