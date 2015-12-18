@@ -83,7 +83,8 @@ class TeamController extends Controller {
         $team = Team::find($id);
         
         if ($team === null) return redirect('teams')->withError(trans('app.teamNotExists', ['id' => $id]));
-
+        
+        $team->persons()->detach();
         $team->delete();
 
         return redirect('teams')->with('success', trans('app.removeTeamSuccess'));

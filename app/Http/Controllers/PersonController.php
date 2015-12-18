@@ -54,7 +54,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
 
-        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
+        if ($person === null) return $this->personNotExistsRedirect($id);
 
         return view('persons.edit')->with('person', $person);
     }
@@ -65,7 +65,7 @@ class PersonController extends Controller {
 
         $person = Person::find($id);
         
-        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
+        if ($person === null) return $this->personNotExistsRedirect($id);
 
         $validator = Person::validate(Input::all(), $field);
 
@@ -84,8 +84,9 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
-
+        if ($person === null) return $this->personNotExistsRedirect($id);
+        
+        $person->teams()->detach();
         $person->delete();
 
         return redirect('persons')->with('success', trans('app.removePersonSuccess'));
@@ -95,7 +96,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
+        if ($person === null) return $this->personNotExistsRedirect($id);
 
         $person->teams()->detach($team_id);
 
@@ -106,7 +107,7 @@ class PersonController extends Controller {
     {
         $person = Person::find($id);
         
-        if ($person === null) return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
+        if ($person === null) return $this->personNotExistsRedirect($id);
         
         $team_id = (int) Input::get('team');
         
@@ -117,9 +118,8 @@ class PersonController extends Controller {
         return redirect()->route('person.edit', $person->id);
     }
     
-    private function validPersonOrRedirect($person, $id) {
-        if ($person === null) 
-            return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
+    private function personNotExistsRedirect($id) {
+        return redirect('persons')->withError(trans('app.personNotExists', ['id' => $id]));
     }
 
 }
